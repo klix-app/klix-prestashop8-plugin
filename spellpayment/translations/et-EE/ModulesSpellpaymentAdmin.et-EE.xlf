@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en-US" original="modules/spellpayment/spellpayment.php" target-language="et-EE" datatype="plaintext">
+    <body>
+      <trans-unit id="klixAdmin-ee-1">
+        <source>Sell more by accepting payments via cards, bank accounts and buy now, pay later instalments. All via a single integration!</source>
+        <target>Müüge rohkem, võttes vastu makseid kaartide, pangakontode ja "osta kohe, maksa hiljem" osamaksete kaudu. Kõik üheainsa integratsiooni kaudu!</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="klixAdmin-ee-2">
+        <source>Klix.app payments</source>
+        <target>Klix.app maksed</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="klixAdmin-ee-3">
+        <source>Are you sure you want to delete Klix.app module?</source>
+        <target>Kas olete kindel, et soovite Klix.app moodulit kustutada?</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="klixAdmin-ee-4">
+        <source>Enable API</source>
+        <target>API lubamine</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="klixAdmin-ee-5">
+        <source>Enable payment method selection</source>
+        <target>Võimaldab makseviisi valiku</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="klixAdmin-ee-6">
+        <source>If enabled, buyers will be able to choose the desired payment method directly in PrestaShop.</source>
+        <target>Kui see on lubatud, saavad ostjad valida soovitud makseviisi otse PrestaShopis.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="klixAdmin-ee-7">
+        <source>Enable one click payment</source>
+        <target>Võimaldage ühe klikiga maksmine</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="klixAdmin-ee-8">
+        <source>Enable logging</source>
+        <target>Logimise lubamine</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="klixAdmin-ee-9">
+        <source>Thanks for using Klix.app payments</source>
+        <target>Täname Klix.app maksete kasutamise eest<</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="klixAdmin-ee-10">
+        <source>Awaiting payment</source>
+        <target>Ootab makset</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
