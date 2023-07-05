@@ -194,7 +194,7 @@ class SpellPayment extends PaymentModule
         OrderIdToSpellUuid::recreate();
 
         Configuration::updateValue('SPELLPAYMENT_METHOD_SELECTION_ENABLED', true);
-        Configuration::updateValue('SPELLPAYMENT_ONE_CLICK_PAYMENT_ENABLED', true);
+        Configuration::updateValue('SPELLPAYMENT_ONE_CLICK_PAYMENT_ENABLED', false);
 
         return parent::install()
             && $this->registerHook('paymentOptions')
@@ -202,7 +202,7 @@ class SpellPayment extends PaymentModule
             && $this->registerHook('displayNavFullWidth')
             && $this->registerHook('displayBeforeBodyClosingTag')
             && $this->registerHook('displayShoppingCartFooter')
-            && $this->registerHook('Header')
+            && $this->registerHook('displayHeader')
             && $this->registerHook('actionOrderSlipAdd')
             && $this->registerHook('paymentReturn');
     }
@@ -302,7 +302,7 @@ class SpellPayment extends PaymentModule
             && $this->unregisterHook('displayBeforeBodyClosingTag')
             && $this->unregisterHook('displayShoppingCartFooter')
             && $this->unregisterHook('paymentReturn')
-            && $this->unregisterHook('Header')
+            && $this->unregisterHook('displayHeader')
             && $this->unregisterHook('actionOrderSlipAdd')
             && parent::uninstall();
     }
@@ -438,7 +438,7 @@ class SpellPayment extends PaymentModule
 
         return $this->trans('Thanks for using Klix.app payments',[],'Modules.Spellpayment.Admin');
     }
-    public function hookHeader($params)
+    public function hookDisplayHeader($params)
     {
         if(!Configuration::get('SPELLPAYMENT_ACTIVE_MODE'))
             return '';

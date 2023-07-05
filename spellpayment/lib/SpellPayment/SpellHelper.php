@@ -45,15 +45,6 @@ class SpellHelper
                         'desc' => 'If enabled, buyers will be able to choose the desired payment method directly in PrestaShop.',
                     ],
                     [
-                        'type' => 'switch',
-                        'label' => 'Enable one click payment',
-                        'name' => 'SPELLPAYMENT_ONE_CLICK_PAYMENT_ENABLED',
-                        'values' => [
-                            ['value' => true],
-                            ['value' => false],
-                        ],
-                    ],
-                    [
                         'type' => 'text',
                         'label' => 'Brand ID',
                         'name' => 'SPELLPAYMENT_SHOP_ID',

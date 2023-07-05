@@ -86,8 +86,7 @@ class SpellpaymentMaincheckoutModuleFrontController extends \ModuleFrontControll
                         'price' => $amountInCents,
                         'quantity' => 1,
                     ],
-                ],
-                'shipping_options' => $this->getShippingPackages()
+                ]
             ],
             'brand_id' => $configValues['SPELLPAYMENT_SHOP_ID'],
             'client' => [
@@ -106,46 +105,6 @@ class SpellpaymentMaincheckoutModuleFrontController extends \ModuleFrontControll
         ];
 
         return $params;
-    }
-
-
-    /**
-     * Function for getting Shipping packages.
-     */
-    private function getShippingPackages()
-    {
-        $result = array();
-        try {
-            $shipping_packages = $this->context->cart->getDeliveryOption(null, false, false);
-            $shipping_packages_list = $this->context->cart->getDeliveryOptionList(null, true);
-
-            foreach ($shipping_packages as $package_id => $package) {
-                /**
-                 * @var $shipping_rate WC_Shipping_Rate
-                 */
-                foreach ($shipping_packages_list as $shipping_rate_id => $shipping_rate) {
-                    if (isset($shipping_rate[$package])) {
-                        $shipping_rate_package = $shipping_rate[$package]['carrier_list'];
-                        foreach ($shipping_rate_package as $carrier_id => $carrier) {
-                            $result[] = array(
-                                'id' => $carrier['instance']->id,
-                                'label' => $carrier['instance']->getCarrierNameFromShopName(),
-                                'price' => round($carrier['price_with_tax'] * 100),
-                            );
-                        }
-                    }
-                }
-            }
-        } catch (Exception $e) {
-            \PrestaShopLogger::addLog(
-                'Get Packages: ' . $e->getMessage(),
-                3,
-                null,
-                'Packages'
-            );
-        }
-
-        return $result;
     }
 
     /**
