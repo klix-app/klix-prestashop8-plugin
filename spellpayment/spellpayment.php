@@ -41,7 +41,7 @@ class SpellPayment extends PaymentModule
     {
         $this->name = 'spellpayment';
         $this->tab = 'payments_gateways';
-        $this->version = '1.2.3';
+        $this->version = '1.2.4';
         $this->ps_versions_compliancy = ['min' => '1.7.0.0', 'max' => _PS_VERSION_];
         $this->author = 'Klix.app';
         $this->controllers = ['validation'];
@@ -257,13 +257,13 @@ class SpellPayment extends PaymentModule
         }
 
         $product_price=str_replace('€','',$params['product']->price);
-        $product_price=str_replace(',','.',$params['product']->price);
+        $product_price=str_replace(',','.',$product_price);
         $product_price=floatval($product_price);
         $product_price=$product_price*100;
 
         $brand_id=Configuration::get('SPELLPAYMENT_SHOP_ID');
         $language=SpellHelper::parseLanguage(Context::getContext()->language->iso_code);
-        $one_click_button_enabled=Configuration::get('SPELLPAYMENT_ONE_CLICK_PAYMENT_ENABLED',false);
+        $one_click_button_enabled=false;
 
         if (is_array($params['product'])) {
             $url = $this->context->link->getModuleLink(

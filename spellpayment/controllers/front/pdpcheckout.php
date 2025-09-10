@@ -15,7 +15,7 @@ use SpellPayment\Repositories\OrderIdToSpellUuid;
 
 class spellpaymentpdpcheckoutModuleFrontController extends \ModuleFrontController
 {
-    const SPELL_MODULE_VERSION = 'v1.2.3';
+    const SPELL_MODULE_VERSION = 'v1.2.4';
     public function initContent()
     {
         parent::initContent();
@@ -144,7 +144,7 @@ class spellpaymentpdpcheckoutModuleFrontController extends \ModuleFrontControlle
             'success_callback' => $callback_url,
             'failure_redirect' => $failure_url,
             'cancel_redirect' => $cancel_url,
-            'creator_agent' => 'PrestashopModule ' . self::SPELL_MODULE_VERSION,
+            'creator_agent' => 'PrestashopModule8 ' . self::SPELL_MODULE_VERSION,
             'platform' => 'prestashop',
             // 'reference' => $cart->reference,
             'purchase' => [
