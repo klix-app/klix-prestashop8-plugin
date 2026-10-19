@@ -30,8 +30,16 @@ class SpellHelper
                         'name' => 'SPELLPAYMENT_ACTIVE_MODE',
                         'is_bool' => true,
                         'values' => [
-                            ['value' => true],
-                            ['value' => false],
+                            [
+                                'id'    => 'active_mode_on',
+                                'value' => true,
+                                'label' => 'Enabled',
+                            ],
+                            [
+                                'id'    => 'active_mode_off',
+                                'value' => false,
+                                'label' => 'Disabled',
+                            ],
                         ],
                     ],
                     [
@@ -39,8 +47,16 @@ class SpellHelper
                         'label' => 'Enable payment method selection',
                         'name' => 'SPELLPAYMENT_METHOD_SELECTION_ENABLED',
                         'values' => [
-                            ['value' => true],
-                            ['value' => false],
+                            [
+                                'id'    => 'method_selection_on',
+                                'value' => true,
+                                'label' => 'Enabled',
+                            ],
+                            [
+                                'id'    => 'method_selection_off',
+                                'value' => false,
+                                'label' => 'Disabled',
+                            ],
                         ],
                         'desc' => 'If enabled, buyers will be able to choose the desired payment method directly in PrestaShop.',
                     ],
@@ -61,8 +77,16 @@ class SpellHelper
                         'label' => 'Enable logging',
                         'name' => 'SPELLPAYMENT_ENABLE_LOGGING',
                         'values' => [
-                            ['value' => true],
-                            ['value' => false],
+                            [
+                                'id'    => 'logging_on',
+                                'value' => true,
+                                'label' => 'Enabled',
+                            ],
+                            [
+                                'id'    => 'logging_off',
+                                'value' => false,
+                                'label' => 'Disabled',
+                            ],
                         ],
                     ],
                 ],
