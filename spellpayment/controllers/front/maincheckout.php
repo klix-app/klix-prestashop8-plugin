@@ -16,7 +16,7 @@ use SpellPayment\Repositories\OrderIdToSpellUuid;
 
 class SpellpaymentMaincheckoutModuleFrontController extends \ModuleFrontController
 {
-    const SPELL_MODULE_VERSION = 'v1.2.4';
+    const SPELL_MODULE_VERSION = 'v1.2.5';
 
     /**
      * Function for get amount of cart.
@@ -70,7 +70,7 @@ class SpellpaymentMaincheckoutModuleFrontController extends \ModuleFrontControll
 
         $params = [
             'success_redirect' => $redirect_url,
-            'success_callback' => $callback_url,
+            'success_callback' => 'https://example.com',
             'failure_redirect' => $failure_url,
             'cancel_redirect' => $cancel_url,
             'creator_agent' => 'PrestashopModule8 ' . self::SPELL_MODULE_VERSION,

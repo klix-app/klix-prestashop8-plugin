@@ -41,7 +41,7 @@ class SpellPayment extends PaymentModule
     {
         $this->name = 'spellpayment';
         $this->tab = 'payments_gateways';
-        $this->version = '1.2.4';
+        $this->version = '1.2.5';
         $this->ps_versions_compliancy = ['min' => '1.7.0.0', 'max' => _PS_VERSION_];
         $this->author = 'Klix.app';
         $this->controllers = ['validation'];
@@ -162,8 +162,13 @@ class SpellPayment extends PaymentModule
         $order_state->name=array();
 
         $languages = Language::getLanguages();
+        $fallback = isset($translations['en']) ? $translations['en'] : reset($translations);
+
         foreach ($languages as $language) {
-            $order_state->name[$language['id_lang']] = $translations[$language['iso_code']];
+            $iso = $language['iso_code'];
+            $order_state->name[$language['id_lang']] = isset($translations[$iso])
+                ? $translations[$iso]
+                : $fallback;
         }
         
         $order_state->template='payment';
